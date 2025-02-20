@@ -3,8 +3,11 @@
  */
 public class Collatz {
 
+    /*Note:you cannot go through step 1 of lab4 since the buggy code is already here
+      No merge conflict!
+    * Only enrolled students can,so feel free to go ahead*/
     /** Buggy implementation of nextNumber! */
-    public static int nextNumber(int n) {
+    /* public static int nextNumber(int n) {
         if (n  == 128) {
             return 1;
         } else if (n == 5) {
@@ -12,6 +15,12 @@ public class Collatz {
         } else {
             return n * 2;
         }
+    }
+    */
+
+    /** bug-free implementation of nextNumber! */
+    public static int nextNumber(int n) {
+        return n % 2 == 0 ? n/2 : 3*n + 1;
     }
 
     public static void main(String[] args) {

@@ -1,5 +1,9 @@
 import java.io.File;
 
+/* Lab directions may ask you to suffix your course file with sp-2021.
+* Since you are not an enrolled student in UC Berkeley,you don't have to.
+* Thanks to UC Berkeley's generous work;It is her who made self-learning possible and enjoyable.
+* Thanks Again~*/
 public class CheckLabConfig {
 	public static void checkConfig(boolean isWindows) {
 		String repoVariableName = "REPO_DIR";

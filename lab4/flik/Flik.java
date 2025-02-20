@@ -8,6 +8,10 @@ public class Flik {
      *  @param b Value 2
      *  @return Whether a and b are the same */
     public static boolean isSameNumber(Integer a, Integer b) {
-        return a == b;
+        /*NOTE Integer is an instance,not a value;
+        * a == b is incorrect since the boolean can be true iff a and b refer to the same object
+        * You should compare their values!*/
+        return a.intValue() == b.intValue();
+
     }
 }

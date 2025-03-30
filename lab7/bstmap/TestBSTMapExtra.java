@@ -41,11 +41,22 @@ public class TestBSTMapExtra {
     public void testRemoveRoot() {
         BSTMap<String,String> q = new BSTMap<String,String>();
         q.put("c","a");
+        q.printInOrder();
+        System.out.println("\n");
         q.put("b","a");
+        q.printInOrder();
+        System.out.println("\n");
         q.put("a","a");
+        q.printInOrder();
+        System.out.println("\n");
         q.put("d","a");
+        q.printInOrder();
+        System.out.println("\n");
         q.put("e","a"); // a b c d e
-        assertTrue(null != q.remove("c"));
+        q.printInOrder();
+        System.out.println("\n");
+        assertTrue(null != q.remove("c")); // required to be solved!
+        q.printInOrder();
         assertFalse(q.containsKey("c"));
         assertTrue(q.containsKey("a"));
         assertTrue(q.containsKey("b"));
@@ -85,19 +96,19 @@ public class TestBSTMapExtra {
     *  when the node has only 1 or 0 children on either side. */
     @Test
     public void testRemoveRootEdge() {
-        BSTMap rightChild = new BSTMap();
+        BSTMap<Character,Integer> rightChild = new BSTMap<>();
         rightChild.put('A', 1);
         rightChild.put('B', 2);
         Integer result = (Integer) rightChild.remove('A');
-        assertTrue(result.equals(new Integer(1)));
+        assertEquals(1, (int) result);
         for (int i = 0; i < 10; i++) {
             rightChild.put((char) ('C'+i), 3+i);
         }
         rightChild.put('A', 100);
-        assertTrue(((Integer) rightChild.remove('D')).equals(new Integer(4)));
-        assertTrue(((Integer) rightChild.remove('G')).equals(new Integer(7)));
-        assertTrue(((Integer) rightChild.remove('A')).equals(new Integer(100)));
-        assertTrue(rightChild.size()==9);
+        assertEquals(4, (int) ((Integer) rightChild.remove('D')));
+        assertEquals(7, (int) ((Integer) rightChild.remove('G')));
+        assertEquals(100, (int) ((Integer) rightChild.remove('A')));
+        assertEquals(9, rightChild.size());
 
         BSTMap leftChild = new BSTMap();
         leftChild.put('B', 1);

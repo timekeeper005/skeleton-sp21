@@ -1,8 +1,7 @@
 package hashmap;
 
 import static org.junit.Assert.*;
-import org.junit.Test;
-
+import org.junit.jupiter.api.Test;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -13,7 +12,7 @@ import java.util.Set;
  */
 public class TestMyHashMap {
 
-    @Test
+    @org.junit.jupiter.api.Test
     public void sanityGenericsTest() {
         MyHashMap<String, String> a = new MyHashMap<>();
         MyHashMap<String, Integer> b = new MyHashMap<>();
